@@ -1,0 +1,109 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #060609;
+  overflow: hidden;
+}
+
+.loading-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+}
+
+.loading-bg-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3), transparent 70%);
+  top: 30%;
+  left: 40%;
+  animation: loadOrb1 4s ease-in-out infinite;
+}
+
+.loading-bg-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent 70%);
+  bottom: 20%;
+  right: 30%;
+  animation: loadOrb2 5s ease-in-out infinite;
+}
+
+@keyframes loadOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+@keyframes loadOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, 15px) scale(1.05); }
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.loading-logo-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-logo-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-top-color: var(--emerald-400);
+  border-right-color: rgba(52, 211, 153, 0.3);
+}
+
+.loading-logo-ring-2 {
+  inset: 8px;
+  border-top-color: var(--cyan-400);
+  border-right-color: rgba(34, 211, 238, 0.3);
+}
+
+.loading-logo-icon {
+  z-index: 1;
+}
+
+.loading-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 8px;
+}
+
+.loading-tagline {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.loading-bar-container {
+  width: 160px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--emerald-500), var(--cyan-400));
+  border-radius: 2px;
+}
